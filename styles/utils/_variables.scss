@@ -1,13 +1,14 @@
-$primaryTextColor:#262A3F;
+$primaryTextColor:#262a3f;
 $secondaryTextColor: #FFF;
 
 // $subTextColor: ;
 
 $accentColor_green: #85BBB1;
 $accentColor_coral: #F1897B;
-
+$accentHover_red: #E54F3A;
+$accentHover_green: #02E0AB;
 // $hoverTextColor: ;
-
+$borderColor:#E4E4E4;
 $primaryBgColor: #FFF;
 // $secondaryBgColor: rgba(#FFF, 0.9);
 
@@ -18,16 +19,21 @@ $primaryFontFam: 'Lato', sans-serif;
 
 
 
-// Black Theme
-$primaryTextColorDark:#565656;
-$secondaryTextColorDark: #000000 ;
-$subTextColorDark: #7B7B7B;
-$accentTextColorDark: #FFF;
+// Dark Theme
+$primaryTextColorDark: #FFF;
+$secondaryTextColorDark: #FFF;
 
-$hoverTextColorDark: #007FFC;
+// $subTextColor: ;
 
-$primaryBgColorDark: #FFF;
-$secondaryBgColorDark: #F4F4F4;
+$accentColor_green-neon: #53F3CD;
+$accentColor_blue: #689FF2;
+
+// $hoverTextColor: ;
+$borderColorDark:#515773;
+$primaryBgColorDark:#161926;
+
+// $secondaryBgColor: rgba(#FFF, 0.9);
+
 
 
 // font-family: 'Lato', sans-serif;

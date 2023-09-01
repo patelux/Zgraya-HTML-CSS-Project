@@ -6,15 +6,20 @@ body {
     background-color: $primaryBgColor;
     text-align: left;
     font-family: $primaryFontFam;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
     }
     
 .page_wrapper{
     max-width: 1440px;
     margin: 0 auto;
     position: relative;
+    padding-top: 30px;
 }
 .container {
     width: 90%;
     max-width: 1170px;
     margin: 0 auto;
+    outline: 1px solid tomato
 }
