@@ -1,0 +1,20 @@
+*{
+    transition: all $transitionFunc;
+}
+body {
+    color: $primaryTextColor;
+    background-color: $primaryBgColor;
+    text-align: left;
+    font-family: $primaryFontFam;
+    }
+    
+.page_wrapper{
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+}
+.container {
+    width: 90%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
