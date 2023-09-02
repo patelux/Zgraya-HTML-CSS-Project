@@ -20,7 +20,12 @@
         @content;
     }
 }
-
+@mixin background-opacity{
+    height: 100%;
+    max-width: 770px;
+    opacity: 0.9;
+    background-color: $primaryBgColor;
+}
 @mixin btn ($accentColor, $accentHover) {
     display: inline-block;
     width: auto;
@@ -63,7 +68,7 @@
     text-transform: uppercase;
     color: $accentColor;
     transition: all $transitionFunc;
-    padding: 33px 96px 37px 89px;
+    padding: 32px 94px 36px 89px;
     border: 1px solid $borderColor;
     &::after{
         content: '';
