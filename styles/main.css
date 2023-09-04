@@ -1050,7 +1050,15 @@ textarea:hover, textarea:focus {
 .contacts-form_wrapper {
   min-width: 280px;
   max-width: 100%;
-  padding-left: 15px;
+  padding-left: 0px;
+}
+
+.contacts .container {
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .form-input, textarea {
