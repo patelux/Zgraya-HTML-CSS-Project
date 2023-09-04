@@ -41,6 +41,102 @@ input, button {
   background-color: transparent;
 }
 
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #000;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: calc($hamburger-layer-height/-2);
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+ * Spin
+ */
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--spin .hamburger-inner::before {
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+.hamburger--spin .hamburger-inner::after {
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
 * {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -74,8 +170,13 @@ body {
   font-weight: 600;
   src: url(../assets/fonts/LatoSemibold.otf) format("otf"), url(../assets/fonts/LatoSemibold.ttf) format("ttf"), url(../assets/fonts/LatoSemibold.woff) format("woff");
 }
-a, button {
-  cursor: url("../assets/images/cursor.png") 2 2, pointer;
+body.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 
 .page_wrapper {
@@ -160,6 +261,10 @@ a, button {
 .nav_link:focus, .nav_link:hover {
   color: #85BBB1;
   font-weight: 700;
+}
+
+.hamburger {
+  display: none;
 }
 
 .hero .container {
@@ -425,7 +530,6 @@ a, button {
   text-align: left;
   row-gap: 90px;
   flex-wrap: wrap;
-  outline: 1px solid tomato;
 }
 
 .benefits_item {
@@ -434,7 +538,6 @@ a, button {
   flex-basis: calc((100% - 30px) / 2);
   padding: 20px 68px 20px 30px;
   position: relative;
-  outline: 1px solid tomato;
 }
 .benefits_item::before {
   content: "";
@@ -464,7 +567,6 @@ a, button {
   background-size: cover;
   text-align: left;
   padding: 100px 300px 100px 130px;
-  outline: 1px solid tomato;
 }
 
 .quote-description {
@@ -587,14 +689,12 @@ a, button {
   column-gap: 100px;
   row-gap: 70px;
   padding: 75px 0 75px 70px;
-  outline: 1px solid tomato;
 }
 
 .promises_item {
   position: relative;
   width: 100%;
   max-width: 300px;
-  outline: 1px solid tomato;
 }
 
 .section-subtitle {
@@ -642,7 +742,6 @@ a, button {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 2.565% 3.42%;
-  outline: 1px solid tomato;
 }
 .reviews_item:nth-of-type(1n) {
   background-image: linear-gradient(90deg, rgba(25, 28, 41, 0.6) 100%, rgba(25, 28, 41, 0.6) 100%), url(../assets/images/client-1-image_desktop-1x.jpg);
@@ -959,8 +1058,78 @@ textarea:hover, textarea:focus {
   }
 }
 @media screen and (max-width: 767px) {
+  .mobile {
+    display: block;
+  }
+
+  .header.menu-open::after {
+    content: "";
+    display: block;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: -80vh;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .main_nav {
+    padding: 0;
+  }
+
   .nav_list {
-    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+    z-index: 6;
+    height: 70vh;
+    width: 80%;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    transition: all 1s ease;
+    transform: translateX(100vw);
+    opacity: 0;
+    padding-top: 60px;
+  }
+  .nav_list a {
+    font-size: 23px;
+    font-weight: 700;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .nav_list a::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 70px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .nav_list.active {
+    transform: none;
+    opacity: 1;
+  }
+
+  .hamburger {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    right: 20px;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+
+  .header {
+    padding: 12px 0;
   }
 
   .logo-wrapper {
@@ -1076,6 +1245,6 @@ textarea:hover, textarea:focus {
     margin: 0 auto;
   }
   .contacts .form-input, .contacts textarea {
-    min-width: 360px;
+    min-width: 320px;
   }
 }
