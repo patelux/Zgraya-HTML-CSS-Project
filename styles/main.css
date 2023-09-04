@@ -828,7 +828,7 @@ textarea:hover, textarea:focus {
     min-height: 570px;
     background-image: url(../assets/images/statistic-img_desktop-1x.jpg);
     background-position: left top;
-    background-size: contain;
+    background-size: cover;
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -965,12 +965,13 @@ textarea:hover, textarea:focus {
   }
 
   .statistics-count {
-    font-size: 58px;
+    font-size: 46px;
     line-height: calc(72/100);
   }
 
   .statistics-wrapper {
     max-width: 770px;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -979,10 +980,18 @@ textarea:hover, textarea:focus {
     padding-bottom: 25px;
   }
 
+  .statistics-list {
+    gap: 40px;
+  }
+
   .statistics-description {
     width: 100%;
     text-align: center;
     padding-top: 15px;
+  }
+
+  .statistics-item:not(:last-child)::after {
+    bottom: -25%;
   }
 
   .benefits_list, .promises_list, .quote .container, .reviews_item {
