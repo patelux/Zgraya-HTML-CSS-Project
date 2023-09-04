@@ -1,16 +1,16 @@
 $primaryTextColor:#262a3f;
 $secondaryTextColor: #FFF;
 
-// $subTextColor: ;
-
 $accentColor_green: #85BBB1;
+
 $accentColor_coral: #F1897B;
 $accentHover_red: #E54F3A;
+
 $accentHover_green: #02E0AB;
-// $hoverTextColor: ;
+$accentHover_greenDark: #02E0AB;
+
 $borderColor:#E4E4E4;
 $primaryBgColor: #FFF;
-// $secondaryBgColor: rgba(#FFF, 0.9);
 
 
 $transitionFunc: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -19,22 +19,15 @@ $primaryFontFam: 'Lato', sans-serif;
 $secondaryFontFam: 'Playfair Display', serif;
 
 
-// Dark Theme
+// // Dark Theme
+
 $primaryTextColorDark: #FFF;
-$secondaryTextColorDark: #FFF;
 
-// $subTextColor: ;
+$accentColor_greenDark: #689FF2;
 
-$accentColor_green-neon: #53F3CD;
-$accentColor_blue: #689FF2;
+$accentColor_coralDark: #53F3CD;
+$accentHover_redDark: #02E0AB;
 
-// $hoverTextColor: ;
 $borderColorDark:#515773;
 $primaryBgColorDark:#161926;
 
-// $secondaryBgColor: rgba(#FFF, 0.9);
-
-
-
-// font-family: 'Lato', sans-serif;
-// font-family: 'Playfair Display', serif;

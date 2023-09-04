@@ -10,7 +10,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital@0;1&display=swap"
     rel="stylesheet">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="./styles/main.min.css" />
 
   <title>SOLIS HTML-PROJECT</title>
@@ -62,6 +63,19 @@
           <span class="hamburger-inner"></span>
         </span>
       </button>
+       <button class="theme_switcher" type="button" onclick="toggleTheme(event)">
+        <div class="theme-dark">
+          <span class="material-symbols-outlined">
+          dark_mode
+          </span>
+        </div>
+        <div class="theme-light">
+        <span class="material-symbols-outlined">
+          light_mode
+        </span>   
+        </div>
+
+       </button>
     </header>
 
     <main class="main">
@@ -369,6 +383,13 @@
       document.querySelector('.nav_list').classList.toggle('active');
       document.querySelector('.header').classList.toggle('menu-open');
       document.querySelector('.footer').classList.toggle('active');
+    }
+  </script>
+  <script>
+      function toggleTheme(e){
+      e.preventDefault();
+      document.querySelector('body').classList.toggle('dark');
+      document.querySelector('.theme_switcher').classList.toggle('is-active');
     }
   </script>
 </body>

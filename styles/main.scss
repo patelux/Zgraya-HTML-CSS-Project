@@ -2,6 +2,7 @@
 @import './components/hamburgers';
 @import '../assets/fonts/style.css';
 @import './utils/variables';
+
 @import './utils/mixins';
 
 @import './components/container';
@@ -108,6 +109,46 @@ justify-content: space-between;
 .hamburger{
     display: none;
 }
+.theme_switcher {
+    display: inline-block;
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: all .2s ease;
+    .theme-dark span{
+        display: block;
+    }
+    .theme-light span{
+        display: none;
+    }
+    &:hover, &:focus{
+        color: $accentColor_green;
+    }
+}
+
+.theme_switcher.is-active {
+    display: inline-block;
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: all .2s ease;
+    .theme-dark span{
+        display: none;
+    }
+    .theme-light span{
+        display: block;
+    }
+    &:hover, &:focus{
+        color: $accentColor_greenDark;
+    }
+}
+
+
+
 
 // MAIN CONTENT------------------
 // SECTION HERO
@@ -148,21 +189,21 @@ justify-content: space-between;
  .btn-large-coral {
     @include btn-large($accentColor_coral, $accentHover_red, $borderColor);
  }
- .btn-large-green {
-    @include btn-large($accentColor_green, $accentHover_green, $borderColor);
- }  
+//  .btn-large-green {
+//     @include btn-large($accentColor_green, $accentHover_green, $borderColor);
+//  }  
 .btn-coral {
     @include btn($accentColor_coral, $accentHover_red);
    
  }
- .btn-green {
-    @include btn($accentColor_green, $accentHover_green);
- }
+//  .btn-green {
+//     @include btn($accentColor_green, $accentHover_green);
+//  }
 
 // SECTION statistics--------------------
 .statistics .container {
     min-height: 670px;
-    background-image: url(../assets/images/statistic-img_desktop-1x.jpg);
+    background-image: linear-gradient(0deg, rgba(33, 36, 54, 0.50) 0.64%, rgba(33, 36, 54, 0.00) 94.04%), url(../assets/images/statistic-img_desktop-1x.jpg);
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -548,7 +589,8 @@ fieldset{
         opacity: .5;
     }
     &:hover, &:focus{
-    border-color: $accentHover_green;}
+    border-color: $accentHover_green;
+    }
 }
 textarea{
     height: auto;
@@ -627,8 +669,8 @@ textarea{
 .statistics .container {
     min-height: 570px;
     background-size: cover;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .statistics-wrapper {
     max-width: 770px;
@@ -733,7 +775,6 @@ textarea{
 
 // MOBILE LARGE
 @media screen and (max-width: 990px) {
-
     .reviews-description {
         font-size: 0.8rem;
     }   
@@ -757,6 +798,9 @@ textarea{
         bottom: -80vh;
         z-index: 5;
         background-color: rgba(0, 0, 0, 0.2);
+    }
+    .theme_switcher {
+        top: 40px;
     }
 }
 .main_nav {
@@ -806,12 +850,22 @@ textarea{
         background-color: $accentColor_green;
     }
 }
+.nav_list .nav_item .nav_link.current::after{
+        content: '';
+        width: 44px;
+        height: 3px;
+        position: absolute;
+        background-color: rgba($accentColor_coral, 0.3);
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+}
 
  .hamburger{
     display: inline-block;
     position: fixed;
     top: 0px;
-    right: 20px;
+    right: 40px;
     z-index: 10;
     transition: all 0.3s ease;
     &.is-active{
@@ -926,5 +980,218 @@ textarea{
     }
 }
    
-    
+//    DARK THEME ---------------------------------------------------// 
 
+
+body.dark {
+    .page_wrapper{
+        background-image: url(../assets/images/gradient-for-first-screenDark.png), url(../assets/images/first-screen-bgimageDark.jpg);
+    }
+    
+    // HEADER-------------------------
+    .header {
+        background: linear-gradient(270deg, rgba(22, 25, 38, 0.50) 0%, rgba(22, 25, 38, 0.00) 24.1%, rgba(22, 25, 38, 0.00) 47.19%), rgba(22, 25, 38, 0.02);
+        backdrop-filter: blur(4.5px);
+    }
+    
+    .nav_item {
+        color: $primaryTextColorDark;
+    }
+
+    .current::after{
+        opacity: 0.3;
+        background: var(--text-linear-green, linear-gradient(97deg, #53F3CD 6.73%, rgba(83, 243, 205, 0.00) 116.9%));
+    }
+    .nav_link {
+        &:focus, &:hover {
+            color: $accentColor_greenDark;
+        }
+    }
+    
+    .theme_switcher {
+        color: $primaryTextColorDark;
+        .theme-dark span{
+            color: $primaryTextColorDark;
+        }
+        .theme-light span{
+            color: $primaryTextColorDark;
+        }
+    }
+    
+    .theme_switcher.is-active {
+        color: $primaryTextColorDark;
+        .theme-dark span{
+            color: $primaryTextColorDark;
+        }
+        .theme-light span{
+            color: $primaryTextColorDark;
+        }
+    }
+    
+    // MAIN CONTENT------------------
+    
+    .section-title {
+        color: $primaryTextColorDark;
+        span{
+        color: $accentColor_greenDark; 
+        }
+    }
+    
+    .section-description{
+        color: $primaryTextColorDark; 
+    }
+    
+     .btn-large-coral {
+        @include btn-large($accentColor_coralDark, $accentHover_redDark, $borderColorDark);
+    }
+     
+    .btn-coral {
+        @include btn($accentColor_coralDark, $accentHover_redDark);
+    }
+    // SECTION statistics--------------------
+    .statistics .container {
+        background-image: url(../assets/images/statistic-img_desktop-1x.jpg);
+    }
+    .statistics-wrapper {
+        background-color: $primaryBgColorDark;
+    }
+    .statistics-item {
+        &:not(:last-child)::after{
+            background-color: $accentColor_greenDark;
+        }
+    }
+    .benefits_item {
+        &::before{
+            background-color: $borderColorDark;
+        }
+    }
+    .quote-description {
+        &::before{
+            content: url(../assets/images/quote-iconDark.svg);
+        }
+    }
+    .video-wrapper {
+        border: 1px solid $borderColorDark;
+    }
+    
+    .video-youtube_link{
+        transition: all $transitionFunc;
+        svg use{
+            --color1: #689FF2;
+            --color2: #689FF2;
+        }
+        &:hover svg use, &:focus img svg use{
+            --color1: #85BBB1;
+            --color2: #85BBB1;
+        }
+    
+    }
+    
+    // section promises
+    .promises-wrapper{
+        background-color: $primaryBgColorDark;
+    }
+    .section-subtitle {
+        color: $primaryTextColorDark;
+    }
+    
+    
+    .reviews_item {
+    
+        &:nth-of-type(1n){
+            background-image:linear-gradient(90deg, rgba(25, 28, 41, 0.60) 100%, rgba(25, 28, 41, 0.60) 100%),
+            url(../assets/images/client-1-image_desktop-1x.jpg);
+        }
+        &:nth-of-type(2n){
+            background-image: linear-gradient(90deg, rgba(25, 28, 41, 0.60) 100%, rgba(25, 28, 41, 0.60) 100%),
+             url(../assets/images/client-2-image_desktop-1x.jpg);
+        }
+        &:nth-of-type(3n){
+            background-image: linear-gradient(90deg, rgba(25, 28, 41, 0.60) 100%, rgba(25, 28, 41, 0.60) 100%),
+            url(../assets/images/client-3-image_desktop-1x.jpg);
+        }
+    }
+    .reviews-description {
+        color: $secondaryTextColor;
+        font-size: 1rem;
+        line-height: calc(26/16);
+        opacity: 0.8;
+    }
+        
+    .contacts {
+        .container {
+        border-top: 1px solid $borderColorDark;
+        border-bottom: 1px solid $borderColorDark;
+    }
+    }
+    
+    .form-input, textarea {
+        color: $primaryTextColorDark;
+        background-color: transparent;
+        border-bottom: 1px solid $borderColorDark;
+        &:hover, &:focus{
+        border-color: $accentHover_green;}
+    }
+    textarea{
+        border-bottom: 1px solid $borderColorDark;
+        &:hover,&:focus {
+        border-color: $accentHover_greenDark;
+        }
+    }
+    
+    .footer-copyright {
+        color: $primaryTextColorDark;
+    }
+    
+    .madeby-box a, .agreement, .privacy-policy{
+        &:focus, &:hover {
+            color: $accentColor_greenDark;
+        }
+        color: $primaryTextColorDark;
+    
+    }
+    
+    
+    // TABLET STYLES-------------------
+    
+    @media screen and (max-width: 1078px) {
+    .promises-wrapper{
+        background-color: $primaryBgColorDark;
+    }
+    }
+    
+    // MOBILE STYLES------------------
+    @media screen and (max-width: 767px) {
+        .hamburger{
+            color: $primaryTextColor;
+        }
+
+    .header.menu-open{ 
+        backdrop-filter: none;
+        &::after{
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .theme_switcher.is-active {
+            top: 40px;
+        }
+    }
+    
+    .nav_list {
+        background-color: $primaryTextColor;
+    
+        & .nav_link{
+    
+            &::after{
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            &.current::after{
+                bottom: 10px;
+            }
+        }
+      
+        & .nav_link:hover::after{
+            background-color: $accentColor_greenDark;
+        }
+    }
+    }
+    }
