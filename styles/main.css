@@ -1054,5 +1054,5 @@ textarea:hover, textarea:focus {
 }
 
 .form-input, textarea {
-  min-width: 260px;
+  min-width: 360px;
 }
