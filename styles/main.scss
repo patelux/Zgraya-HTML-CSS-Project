@@ -336,6 +336,10 @@ justify-content: space-between;
 }
 .video-youtube_link{
     transition: all $transitionFunc;
+    svg{
+        width: 120px;
+        height: 120px;
+    }
     &:hover svg use, &:focus img svg use{
         --color1: #02E0AB;
     }
@@ -496,7 +500,9 @@ justify-content: space-between;
     padding-left: 30px;
 
 }
-
+.form{
+    width: 100%;
+}
 fieldset{
     border: none;
     width: 100%;
@@ -515,6 +521,7 @@ fieldset{
 .form-input, textarea {
     position: relative;
     width: 470px;
+    width: 100%;
     min-height: 32px;
     outline: transparent;
     color: $primaryTextColor;
@@ -658,6 +665,10 @@ textarea{
     padding: 31px 30px 31px 30px;
     margin-bottom: 30px;
 }
+.video-youtube_link svg.item-icon {
+    width: 80px;
+    height: 80px;
+}
 .promises .container {
     max-height: 540px;
     padding-top: 25px;
@@ -713,5 +724,83 @@ textarea{
     }   
 }
 @media screen and (max-width: 767px) {
-    
+    .nav_list {
+        display: none;
+    }
+    .logo-wrapper {
+    height: initial;
+    }
+    .section-title {
+        font-size: 36px;
+        line-height: calc(52/36);
+    }
+    .hero .section-description {
+        max-width: 100%;
+    }
+    .statistics-count {
+        font-size: 58px;
+        line-height: calc(72/100);
+    }
+    .statistics-wrapper {
+        max-width: 770px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .statistics-description {
+        width: 100%;
+        text-align: center;
+        padding-top: 15px;
+    }
+    .benefits_list, .promises_list, .quote .container, .reviews_item {
+        text-align: center;
+    }
+    .promises .container {
+        max-height: 100%;
+    }
+    .promises_list {
+        flex-direction: column;
+        justify-content: center;
+        column-gap: 0;
+        row-gap: 30px;
+        padding: 15px 0 15px 0;;
+    }
+    .reviews_list {
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .reviews_item {
+        width: 90%;
+        min-height: 340px;
+        padding: 5% 4%;
+    }
+    .reviews .section-title, .reviews .section-description, .video-wrapper, .video .section-title, .video .section-description, .contacts .section-title, .contacts .section-description, .video .section-title, .video .section-description, .hero .container {
+        text-align: center;
+    }
+    .reviews-description {
+        font-size: 1rem;
+    }
+    .video-youtube_link svg.item-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .footer_wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .agreement, .madeby-box a, .privacy-policy {
+        padding: 0;
+    }
+    .contacts-form_wrapper {
+        min-width: 280px;
+        max-width: 100%;
+        padding-left: 15px;
+    }
+    .form-input, textarea {
+        min-width: 260px;
+    }
 }
