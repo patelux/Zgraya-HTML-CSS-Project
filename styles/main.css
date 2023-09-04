@@ -1047,12 +1047,6 @@ textarea:hover, textarea:focus {
   padding: 0;
 }
 
-.contacts-form_wrapper {
-  min-width: 280px;
-  max-width: 100%;
-  padding-left: 0px;
-}
-
 .contacts .container {
   flex-direction: column;
   gap: 30px;
@@ -1060,7 +1054,14 @@ textarea:hover, textarea:focus {
   padding-top: 40px;
   padding-bottom: 40px;
 }
-
-.form-input, textarea {
+.contacts .contacts-form_wrapper {
+  min-width: 280px;
+  max-width: 100%;
+  padding-left: 0px;
+}
+.contacts .btn-coral {
+  margin: 0 auto;
+}
+.contacts .form-input, .contacts textarea {
   min-width: 360px;
 }

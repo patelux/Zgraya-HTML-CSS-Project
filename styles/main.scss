@@ -806,19 +806,27 @@ textarea{
     .agreement, .madeby-box a, .privacy-policy {
         padding: 0;
     }
-    .contacts-form_wrapper {
-        min-width: 280px;
-        max-width: 100%;
-        padding-left: 0px;
-    }
-    .contacts .container {
+    
+    .contacts{ 
+        .container {
         flex-direction: column;
         gap: 30px;
         align-items: center;
         padding-top: 40px;
         padding-bottom: 40px;
-    }
-    .form-input, textarea {
+        }
+        .contacts-form_wrapper {
+        min-width: 280px;
+        max-width: 100%;
+        padding-left: 0px;
+        }
+        .btn-coral {
+        margin: 0 auto;
+        } 
+        .form-input, textarea {
         min-width: 360px;
+        }  
     }
+   
+    
 
