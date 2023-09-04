@@ -624,8 +624,6 @@ textarea{
 }
 .statistics .container {
     min-height: 570px;
-    background-image: url(../assets/images/statistic-img_desktop-1x.jpg);
-    background-position: left top;
     background-size: cover;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -671,6 +669,7 @@ textarea{
 }
 .promises .container {
     max-height: 540px;
+    background-size: cover;
     padding-top: 25px;
     padding-bottom: 25px;
 }
@@ -737,6 +736,11 @@ textarea{
     .hero .section-description {
         max-width: 100%;
     }
+    
+    .statistics .container, .promises .container {
+        background-size: cover;
+    }
+}
     .statistics-count {
         font-size: 46px;
         line-height: calc(72/100);
@@ -810,4 +814,4 @@ textarea{
     .form-input, textarea {
         min-width: 260px;
     }
-}
+
