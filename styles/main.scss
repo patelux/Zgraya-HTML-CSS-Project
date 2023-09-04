@@ -19,7 +19,7 @@ a, button {
 }
 .page_wrapper{
     background-image: linear-gradient(183deg,rgba(255,255,255,0) 46.73%,#FFF 63.21%),url(../assets/images/first-bg-image_desktop-1x.jpg);
-    background-position: left 100%,center top;
+    background-position: left 484px,center top;
     background-repeat: no-repeat;
     background-size: 100% 825px,100% 1028px;
 }
@@ -235,10 +235,10 @@ justify-content: space-between;
 }
 .benefits_list {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items:stretch;
+    justify-content: space-between;
     text-align: left;
-    column-gap: 30px;
+    // column-gap: 30px;
     row-gap: 90px;
     flex-wrap: wrap;
     outline: 1px solid tomato;
@@ -271,11 +271,10 @@ justify-content: space-between;
 // quote section
 .quote .container {
     min-height: 400px;
-    width: 100%;
     background-image: url(../assets/images/quote-bg-image_desktop-1x.jpg);
     background-position: left top;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     text-align: left;
     padding: 100px 300px 100px 130px;
     outline: 1px solid tomato;
@@ -319,12 +318,13 @@ justify-content: space-between;
 }
 .video-content{
     max-width: 870px;
+    width: 100%;
     max-height: 535px;
 
 }
 .video-youtube_link-wrapper{
-    width: 120px;
-    height: 120px;
+    max-width: 120px;
+    max-height: 120px;
     display: flex;
     align-items: center;
     border-radius: 50%;
@@ -405,3 +405,211 @@ justify-content: space-between;
     margin-bottom: 15px;
 }
 
+// section reviews
+.reviews {
+    .container {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    }
+    .section-title {
+    font-size: 40px;
+    line-height: calc(48/40);
+    margin-bottom: 20px;
+    }
+    .section-description{
+     max-width: 400px;
+     margin-bottom: 50px;   
+    }
+}
+.reviews_list {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.reviews_item {
+    height: 1px; 
+    width: calc((100% - 30px * 2)/ 3);
+    min-height: 340px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between ;
+    text-align: left;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2.565% 3.42%;
+    outline: 1px solid tomato;
+    &:nth-of-type(1n){
+        background-image:linear-gradient(90deg, rgba(25, 28, 41, 0.60) 100%, rgba(25, 28, 41, 0.60) 100%),
+        url(../assets/images/client-1-image_desktop-1x.jpg);
+    }
+    &:nth-of-type(2n){
+        background-image: linear-gradient(90deg, rgba(25, 28, 41, 0.60) 100%, rgba(25, 28, 41, 0.60) 100%),
+         url(../assets/images/client-2-image_desktop-1x.jpg);
+    }
+    &:nth-of-type(3n){
+        background-image: linear-gradient(90deg, rgba(25, 28, 41, 0.60) 100%, rgba(25, 28, 41, 0.60) 100%),
+        url(../assets/images/client-3-image_desktop-1x.jpg);
+    }
+}
+.reviews-description {
+    color: $secondaryTextColor;
+    font-size: 1rem;
+    line-height: calc(26/16);
+    opacity: 0.8;
+}
+.reviews-subtext {
+    color: $secondaryTextColor;
+    font-family: $secondaryFontFam;
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: 1.6px;
+}
+// contacts section
+
+.contacts {
+    .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-bottom: 100px;
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+}
+    .section-title {
+    font-size: 40px;
+    line-height: calc(39/40);
+    margin-bottom: 29px;
+    }
+}
+.contacts-description_wrapper {
+    padding-top: 21px;
+   
+}
+.contacts-form_wrapper {
+    min-width: 500px;
+    padding-left: 30px;
+
+}
+
+fieldset{
+    border: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 40px;  
+}
+.form-field {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.form-input, textarea {
+    position: relative;
+    width: 470px;
+    min-height: 32px;
+    outline: transparent;
+    color: $primaryTextColor;
+    font-family: $secondaryFontFam;
+    font-size: 18px;
+    font-weight: 400;
+    border-bottom: 1px solid $borderColor;
+    border-radius: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;  
+    overflow: visible;  
+    &::placeholder{
+        position: relative;
+        top: 0;
+        left: -10px;
+        z-index: 2;
+        font-family: $secondaryFontFam;
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: calc(20/18);
+        letter-spacing: 1.44px; 
+        opacity: .5;
+    }
+    &:hover, &:focus{
+    border-color: $accentHover_green;}
+}
+textarea{
+    height: auto;
+    border: none;
+    border-bottom: 1px solid $borderColor;
+    &::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        }
+    &:hover,&:focus {
+    border-color: $accentHover_green;
+    }
+}
+.footer .container {
+    padding-top: 31px;
+    padding-bottom: 31px;
+}
+.footer_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-copyright {
+    color: $primaryTextColor;
+    font-family: $primaryFontFam;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 26px;
+    opacity: .6;
+    
+}
+.madeby-box{
+    display: block;
+    & p{
+    display: inline-block;
+    margin-right: 12px;
+}
+}
+.madeby-box a, .agreement, .privacy-policy{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: calc(24/14);
+    letter-spacing: 1.12px;
+    text-transform: capitalize;
+    color: inherit;
+    padding: 28px 0;
+    &:focus, &:hover {
+        color: $accentColor_green;
+        font-weight: 700;
+    }
+    color: $primaryTextColor;
+    font-family: $primaryFontFam;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1.12px;
+}
+
+.agreement{
+    margin-right: 32px;
+}
+// tablet
+
+@media screen and (max-width: 1078px) {
+    
+}
+
+// mobile
+@media screen and (max-width: 767px) {
+    
+}
