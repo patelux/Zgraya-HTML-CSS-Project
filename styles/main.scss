@@ -606,10 +606,112 @@ textarea{
 // tablet
 
 @media screen and (max-width: 1078px) {
-    
+    .page_wrapper{
+        padding-top: 10px;
+        background-position: left 323px,center top;
+        background-size: 100% 325px,100% 528px;
+    }
+    .hero .container {
+        padding-top: 50px;
+        padding-bottom: 54px;
 }
-
+.statistics .container {
+    min-height: 570px;
+    background-image: url(../assets/images/statistic-img_desktop-1x.jpg);
+    background-position: left top;
+    background-size: contain;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.statistics-wrapper {
+    max-width: 770px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.benefits .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.benefits_list {
+    flex-direction: column;
+    row-gap: 40px;
+}
+.benefits_item {
+    width: 100%;
+    min-height: initial;
+    flex-basis: initial;
+    &::before{    
+        top:-20px;
+    }
+}
+.quote .container {
+    min-height: 344px;
+    padding: 50px 80px 50px 80px; 
+}
+.quote-description {
+    font-size: 26px;
+}
+.video .container {
+    padding: 30px 30px;
+}
+.video-wrapper {
+    padding: 31px 30px 31px 30px;
+    margin-bottom: 30px;
+}
+.promises .container {
+    max-height: 540px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.promises-wrapper{
+    @include background-opacity;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;    
+    margin-right: 0;
+    margin-left: auto;
+}
+.promises_list {
+    justify-content: space-between;
+    column-gap: 30px;
+    padding: 30px 0 30px 30px;
+}
+.promises_item {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+.reviews .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.reviews .section-description {
+    margin-bottom: 30px;
+}
+.reviews-description {
+    font-size: 0.88rem;
+}
+.reviews-subtext {
+    font-size: 1rem;
+}
+.contacts .container {
+    flex-direction: column;
+    gap:30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.agreement {
+    margin-right: 12px;
+}
+}
 // mobile
+@media screen and (max-width: 990px) {
+    .reviews-description {
+        font-size: 0.8rem;
+    }   
+}
 @media screen and (max-width: 767px) {
     
 }
