@@ -162,7 +162,6 @@ body {
   width: 90%;
   max-width: 1170px;
   margin: 0 auto;
-  outline: 1px solid tomato;
 }
 
 @font-face {
@@ -1062,6 +1061,9 @@ textarea:hover, textarea:focus {
     display: block;
   }
 
+  .header.menu-open {
+    backdrop-filter: none;
+  }
   .header.menu-open::after {
     content: "";
     display: block;
@@ -1086,7 +1088,7 @@ textarea:hover, textarea:focus {
     margin: 0 auto;
     z-index: 6;
     height: 70vh;
-    width: 80%;
+    width: 90%;
     background-color: #fff;
     flex-direction: column;
     justify-content: flex-start;
@@ -1096,13 +1098,13 @@ textarea:hover, textarea:focus {
     opacity: 0;
     padding-top: 60px;
   }
-  .nav_list a {
+  .nav_list .nav_link {
     font-size: 23px;
     font-weight: 700;
     padding: 20px 0;
     text-align: center;
   }
-  .nav_list a::after {
+  .nav_list .nav_link::after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -1118,14 +1120,20 @@ textarea:hover, textarea:focus {
     transform: none;
     opacity: 1;
   }
+  .nav_list .nav_link:hover::after {
+    background-color: #85BBB1;
+  }
 
   .hamburger {
     display: inline-block;
     position: fixed;
-    top: 0;
+    top: 0px;
     right: 20px;
     z-index: 10;
     transition: all 0.3s ease;
+  }
+  .hamburger.is-active {
+    transform: translatex(-20px);
   }
 
   .header {
