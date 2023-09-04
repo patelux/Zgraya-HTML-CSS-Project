@@ -238,7 +238,6 @@ justify-content: space-between;
     align-items:stretch;
     justify-content: space-between;
     text-align: left;
-    // column-gap: 30px;
     row-gap: 90px;
     flex-wrap: wrap;
     outline: 1px solid tomato;
@@ -426,7 +425,6 @@ justify-content: space-between;
     }
 }
 .reviews_list {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -521,7 +519,6 @@ fieldset{
 .form-input, textarea {
     position: relative;
     width: 470px;
-    width: 100%;
     min-height: 32px;
     outline: transparent;
     color: $primaryTextColor;
@@ -610,7 +607,8 @@ textarea{
 .agreement{
     margin-right: 32px;
 }
-// tablet
+
+// TABLET STYLES-------------------
 
 @media screen and (max-width: 1078px) {
     .page_wrapper{
@@ -722,7 +720,7 @@ textarea{
     padding-left: 0;
 }
 .form-input, textarea {
-    width: 360px;
+    width: 320px;
 }
 .agreement {
     margin-right: 12px;

@@ -717,7 +717,6 @@ fieldset {
 .form-input, textarea {
   position: relative;
   width: 470px;
-  width: 100%;
   min-height: 32px;
   outline: transparent;
   color: #262a3f;
@@ -947,7 +946,7 @@ textarea:hover, textarea:focus {
   }
 
   .form-input, textarea {
-    width: 360px;
+    width: 320px;
   }
 
   .agreement {
