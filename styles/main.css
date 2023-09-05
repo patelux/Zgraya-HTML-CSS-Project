@@ -1554,10 +1554,10 @@ body.dark .madeby-box a:focus, body.dark .madeby-box a:hover, body.dark .agreeme
   body.dark .nav_list .nav_link:hover::after {
     background-color: #689FF2;
   }
-}
-body.dark .theme_switcher {
-  right: 40px;
-}
-body.dark .theme_switcher.is-active {
-  right: 40px;
+  body.dark .theme_switcher {
+    right: 40px;
+  }
+  body.dark .theme_switcher.is-active {
+    right: 40px;
+  }
 }
