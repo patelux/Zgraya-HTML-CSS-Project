@@ -113,7 +113,7 @@ justify-content: space-between;
     display: inline-block;
     position: fixed;
     top: 50%;
-    right: 10px;
+    right: 20px;
     transform: translateY(-50%);
     z-index: 10;
     transition: all $transitionFunc;
@@ -129,10 +129,10 @@ justify-content: space-between;
 }
 
 .theme_switcher.is-active {
-    display: inline-block;
+    display: block;
     position: fixed;
     top: 50%;
-    right: 10px;
+    right: 20px;
     transform: translateY(-50%);
     z-index: 10;
     transition: all .2s ease;
@@ -184,17 +184,9 @@ justify-content: space-between;
  .btn-large-coral {
     @include btn-large($accentColor_coral, $accentHover_red, $borderColor);
  }
-//  .btn-large-green {
-//     @include btn-large($accentColor_green, $accentHover_green, $borderColor);
-//  }  
 .btn-coral {
     @include btn($accentColor_coral, $accentHover_red);
-   
  }
-//  .btn-green {
-//     @include btn($accentColor_green, $accentHover_green);
-//  }
-
 // SECTION statistics--------------------
 .statistics .container {
     min-height: 670px;
@@ -657,6 +649,12 @@ textarea{
         background-position: left 323px,center top;
         background-size: 100% 325px,100% 528px;
     }
+    .theme_switcher {
+        right: 10px;
+        &.is-active{
+        right: 10px;
+        }
+    }
     .hero .container {
         padding-top: 50px;
         padding-bottom: 54px;
@@ -798,6 +796,12 @@ textarea{
         top: 40px;
     }
 }
+.theme_switcher {
+    right: 10px;
+    &.is-active{
+    right: 10px;
+    }
+}
 .main_nav {
     padding: 0;
     }
@@ -860,12 +864,16 @@ textarea{
     display: inline-block;
     position: fixed;
     top: 0px;
-    right: 40px;
+    right: 60px;
     z-index: 10;
     transition: all 0.3s ease;
     &.is-active{
         transform: translatex(-20px);
     }
+}
+
+.theme_switcher {
+    right: 40px;
 }
 
 // -------------------------------------------
@@ -879,7 +887,7 @@ textarea{
         font-size: 36px;
         line-height: calc(52/36);
     }
-    .hero .section-description {
+    .hero .section-description, .hero .section-title {
         max-width: 100%;
     }
 
@@ -962,19 +970,67 @@ textarea{
         padding-bottom: 40px;
         }
         .contacts-form_wrapper {
-        min-width: 280px;
-        max-width: 100%;
+        min-width: 90%;
         padding-left: 0px;
         }
         .btn-coral {
         margin: 0 auto;
         } 
         .form-input, textarea {
-        min-width: 320px;
+        min-width: 90%;
+        width: 90%;
         }  
     }
 }
-   
+@media screen and (max-width: 420px) {
+    .contacts{ 
+        .contacts-form_wrapper {
+        min-width: 100%;
+        }
+        .form-input, textarea {
+        min-width: 100%;
+        width: 190px;
+        }  
+    }
+    .contacts .section-description, .contacts .section-title, .hero .container, .reviews .section-description, .reviews .section-title, .video .section-description, .video .section-title, .video-wrapper {
+        white-space:normal;
+    }
+        .btn-large-coral {
+        padding: 32px 40px 32px 40px;
+        &::after {
+            left: 25%;
+            bottom: 34%;
+    }}
+    
+     * .section-title, .contacts .section-title, .reviews .section-title, .video .section-title {
+        font-size: 22px;
+    }
+    .agreement, .footer-copyright, .madeby-box a, .privacy-policy {
+    font-size: 10px;
+    }
+    .contacts .section-description, .hero .section-description, .reviews .section-description, .video .section-description, .video-wrapper, .statistics-description p {
+        font-size: 10px;
+    }
+    .reviews_list {
+        align-items: center;
+    }
+    .promises .container {
+        max-width: 220px;
+    }    
+    .benefits_item {
+        padding: 0;
+    }
+    .quote .container{
+        padding: 2px;
+       
+    }
+    .quote-description {
+        font-size: 18px;
+         &::before{
+            display: none;
+        }
+    }
+}
 //    DARK THEME ---------------------------------------------------// 
 
 
@@ -1018,7 +1074,12 @@ body.dark {
           background-color: $primaryTextColorDark;
         }
       }
-
+      .theme_switcher {
+        right: 10px;
+        &.is-active{
+        right: 10px;
+        }
+    }
     .theme_switcher {
         transition: all $transitionFunc;
         color: $primaryTextColorDark;
@@ -1050,7 +1111,6 @@ body.dark {
         }
         .theme-light span{
             color: $accentColor_greenDark;
-
         }
     }
 
@@ -1219,5 +1279,11 @@ body.dark {
             background-color: $accentColor_greenDark;
         }
     }
+    }
+    .theme_switcher {
+        right: 40px;
+        &.is-active{
+        right: 40px;
+        }
     }
     }

@@ -10,8 +10,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital@0;1&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="./styles/main.min.css" />
 
   <title>SOLIS HTML-PROJECT</title>
@@ -51,31 +53,28 @@
                 <a class="nav_link" href=".#">resources</a>
               </li>
             </ul>
-            
-            <div class="btn-wrapper">
-            </div>
-
           </div>
+          <button class="hamburger hamburger--spin" type="button" onclick="toggleMenu(event)">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+         
+          <button class="theme_switcher" type="button" onclick="toggleTheme(event)">
+            <div class="theme-dark">
+              <span class="material-symbols-outlined">
+                dark_mode
+              </span>
+            </div>
+            <div class="theme-light">
+              <span class="material-symbols-outlined">
+                light_mode
+              </span>
+            </div>
+          </button>
         </nav>
       </div>
-      <button class="hamburger hamburger--spin" type="button" onclick="toggleMenu(event)">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-       <button class="theme_switcher" type="button" onclick="toggleTheme(event)">
-        <div class="theme-dark">
-          <span class="material-symbols-outlined">
-          dark_mode
-          </span>
-        </div>
-        <div class="theme-light">
-        <span class="material-symbols-outlined">
-          light_mode
-        </span>   
-        </div>
 
-       </button>
     </header>
 
     <main class="main">
@@ -330,22 +329,18 @@
           </div>
           <div class="contacts-form_wrapper">
             <form class="form" action="#">
-              <!-- name input -->
               <fieldset>
                 <div class="form-field">
                   <input class="form-input" type="text" name="user_name" id="user_name" placeholder="Your name"
                     maxlength="30" required>
                 </div>
-                <!-- email input -->
                 <div class="form-field">
                   <input class="form-input" type="email" name="user_email" id="user_email" placeholder="Email" required>
                 </div>
-                <!-- textarea -->
                 <div class="form-field">
                   <textarea name="user_text" id="user_text" cols="30" rows="1" maxlength="100" placeholder="Tell more"
                     required></textarea>
                 </div>
-                <!-- Buttons -->
                 <button class="btn-coral" type="submit">
                   send request
                 </button>
@@ -365,18 +360,19 @@
           <div class="madeby-box">
             <p class="footer-copyright">made by</p>
             <a href="#">Zgraya.digital</a>
-          </div>            
-            <div class="usefulllinks-box">
-              <a href="#" class="agreement">User Agreement</a>
-              <a href="" class="privacy-policy">Privacy Policy</a>
-            </div>
+          </div>
+          <div class="usefulllinks-box">
+            <a href="#" class="agreement">User Agreement</a>
+            <a href="" class="privacy-policy">Privacy Policy</a>
+          </div>
 
         </div>
       </div>
     </footer>
   </div>
+
   <script>
-    function toggleMenu(e){
+    function toggleMenu(e) {
       e.preventDefault();
       document.querySelector('body').classList.toggle('fixed');
       document.querySelector('.hamburger').classList.toggle('is-active');
@@ -386,11 +382,12 @@
     }
   </script>
   <script>
-      function toggleTheme(e){
+    function toggleTheme(e) {
       e.preventDefault();
       document.querySelector('body').classList.toggle('dark');
       document.querySelector('.theme_switcher').classList.toggle('is-active');
     }
   </script>
 </body>
+
 </html>
