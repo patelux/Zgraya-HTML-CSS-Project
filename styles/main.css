@@ -1144,10 +1144,6 @@ textarea:hover, textarea:focus {
     transform: translatex(-20px);
   }
 
-  .theme_switcher {
-    right: 40px;
-  }
-
   .header {
     padding: 12px 0;
   }
