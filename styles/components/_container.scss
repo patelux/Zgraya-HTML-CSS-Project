@@ -1,9 +1,7 @@
 *{
     transition: all $transitionFunc;
 }
-body, html{
-width: 100vw;
-}
+
 body {
     color: $primaryTextColor;
     background-color: $primaryBgColor;

@@ -1209,7 +1209,8 @@ body.dark {
         background-color: transparent;
         border-bottom: 1px solid $borderColorDark;
         &:hover, &:focus{
-        border-color: $accentHover_green;}
+        border-color: $accentHover_green;
+        }
     }
     textarea{
         border-bottom: 1px solid $borderColorDark;
@@ -1233,9 +1234,9 @@ body.dark {
     // TABLET STYLES-------------------
     
     @media screen and (max-width: 1078px) {
-    .promises-wrapper{
-        background-color: $primaryBgColorDark;
-    }
+        .promises-wrapper{
+            background-color: $primaryBgColorDark;
+        }
     }
     
     // MOBILE STYLES------------------
