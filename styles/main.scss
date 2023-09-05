@@ -116,7 +116,7 @@ justify-content: space-between;
     right: 10px;
     transform: translateY(-50%);
     z-index: 10;
-    transition: all .2s ease;
+    transition: all $transitionFunc;
     .theme-dark span{
         display: block;
     }
@@ -142,12 +142,7 @@ justify-content: space-between;
     .theme-light span{
         display: block;
     }
-    &:hover, &:focus{
-        color: $accentColor_greenDark;
-    }
 }
-
-
 
 
 // MAIN CONTENT------------------
@@ -1023,7 +1018,9 @@ body.dark {
           background-color: $primaryTextColorDark;
         }
       }
+
     .theme_switcher {
+        transition: all $transitionFunc;
         color: $primaryTextColorDark;
         .theme-dark span{
             color: $primaryTextColorDark;
@@ -1031,11 +1028,8 @@ body.dark {
         }
         .theme-light span{
             color: $primaryTextColorDark;
-
         }
-        
-    }
-    
+    }    
     .theme_switcher.is-active {
         color: $primaryTextColorDark;
         .theme-dark span{
@@ -1047,7 +1041,19 @@ body.dark {
 
         }
     }
-    
+    // --
+    .theme_switcher.is-active:hover {
+        color: $accentColor_greenDark;
+        .theme-dark span{
+            color: $accentColor_greenDark;
+
+        }
+        .theme-light span{
+            color: $accentColor_greenDark;
+
+        }
+    }
+
     // MAIN CONTENT------------------
     
     .section-title {

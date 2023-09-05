@@ -277,7 +277,7 @@ body.fixed {
   right: 10px;
   transform: translateY(-50%);
   z-index: 10;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .theme_switcher .theme-dark span {
   display: block;
@@ -303,9 +303,6 @@ body.fixed {
 }
 .theme_switcher.is-active .theme-light span {
   display: block;
-}
-.theme_switcher.is-active:hover, .theme_switcher.is-active:focus {
-  color: #689FF2;
 }
 
 .hero .container {
@@ -1273,6 +1270,7 @@ body.dark .hamburger-inner, body.dark .hamburger-inner::before, body.dark .hambu
   background-color: #FFF;
 }
 body.dark .theme_switcher {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: #FFF;
 }
 body.dark .theme_switcher .theme-dark span {
@@ -1289,6 +1287,15 @@ body.dark .theme_switcher.is-active .theme-dark span {
 }
 body.dark .theme_switcher.is-active .theme-light span {
   color: #FFF;
+}
+body.dark .theme_switcher.is-active:hover {
+  color: #689FF2;
+}
+body.dark .theme_switcher.is-active:hover .theme-dark span {
+  color: #689FF2;
+}
+body.dark .theme_switcher.is-active:hover .theme-light span {
+  color: #689FF2;
 }
 body.dark .section-title {
   color: #FFF;
