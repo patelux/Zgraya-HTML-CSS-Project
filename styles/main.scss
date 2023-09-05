@@ -1007,24 +1007,44 @@ body.dark {
             color: $accentColor_greenDark;
         }
     }
-    
+    .hamburger {
+        &.is-active {       
+            .hamburger-inner,
+            .hamburger-inner::before,
+            .hamburger-inner::after {
+              background-color: $primaryTextColorDark;
+            }
+          }
+    }
+    .hamburger-inner {
+        &,
+        &::before,
+        &::after {
+          background-color: $primaryTextColorDark;
+        }
+      }
     .theme_switcher {
         color: $primaryTextColorDark;
         .theme-dark span{
             color: $primaryTextColorDark;
+
         }
         .theme-light span{
             color: $primaryTextColorDark;
+
         }
+        
     }
     
     .theme_switcher.is-active {
         color: $primaryTextColorDark;
         .theme-dark span{
             color: $primaryTextColorDark;
+
         }
         .theme-light span{
             color: $primaryTextColorDark;
+
         }
     }
     

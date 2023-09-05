@@ -72,7 +72,7 @@ input, button {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: #000;
+  background-color: #262a3f;
 }
 
 .hamburger-box {
@@ -90,7 +90,7 @@ input, button {
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: #000;
+  background-color: #262a3f;
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
@@ -157,7 +157,6 @@ body.dark {
 }
 
 .page_wrapper {
-  max-width: 1440px;
   margin: 0 auto;
   position: relative;
   padding-top: 30px;
@@ -1264,6 +1263,14 @@ body.dark .current::after {
 }
 body.dark .nav_link:focus, body.dark .nav_link:hover {
   color: #689FF2;
+}
+body.dark .hamburger.is-active .hamburger-inner,
+body.dark .hamburger.is-active .hamburger-inner::before,
+body.dark .hamburger.is-active .hamburger-inner::after {
+  background-color: #FFF;
+}
+body.dark .hamburger-inner, body.dark .hamburger-inner::before, body.dark .hamburger-inner::after {
+  background-color: #FFF;
 }
 body.dark .theme_switcher {
   color: #FFF;
