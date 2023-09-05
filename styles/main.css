@@ -141,6 +141,10 @@ input, button {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+body, html {
+  width: 100vw;
+}
+
 body {
   color: #262a3f;
   background-color: #FFF;
@@ -784,11 +788,12 @@ fieldset {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  width: 470px;
 }
 
 .form-input, textarea {
   position: relative;
-  width: 470px;
+  width: 100%;
   min-height: 32px;
   outline: transparent;
   color: #262a3f;
@@ -1024,7 +1029,8 @@ textarea:hover, textarea:focus {
     padding-left: 0;
   }
 
-  .form-input, textarea {
+  .form-field {
+    margin: 0 auto;
     width: 320px;
   }
 
@@ -1251,24 +1257,20 @@ textarea:hover, textarea:focus {
     padding-bottom: 40px;
   }
   .contacts .contacts-form_wrapper {
-    min-width: 90%;
+    min-width: 100%;
     padding-left: 0px;
+  }
+  .contacts .form-field {
+    margin: 0 auto;
+    width: 300px;
   }
   .contacts .btn-coral {
     margin: 0 auto;
   }
-  .contacts .form-input, .contacts textarea {
-    min-width: 90%;
-    width: 90%;
-  }
 }
 @media screen and (max-width: 420px) {
-  .contacts .contacts-form_wrapper {
-    min-width: 100%;
-  }
-  .contacts .form-input, .contacts textarea {
-    min-width: 100%;
-    width: 190px;
+  .contacts .form-field {
+    width: 200px;
   }
 
   .contacts .section-description, .contacts .section-title, .hero .container, .reviews .section-description, .reviews .section-title, .video .section-description, .video .section-title, .video-wrapper {

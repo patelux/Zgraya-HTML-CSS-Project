@@ -528,7 +528,6 @@ justify-content: space-between;
 .contacts-form_wrapper {
     min-width: 500px;
     padding-left: 30px;
-
 }
 .form{
     width: 100%;
@@ -546,11 +545,11 @@ fieldset{
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    width: 470px;
 }
-
 .form-input, textarea {
     position: relative;
-    width: 470px;
+    width: 100%;
     min-height: 32px;
     outline: transparent;
     color: $primaryTextColor;
@@ -758,7 +757,8 @@ textarea{
     min-width: initial;
     padding-left: 0;
 }
-.form-input, textarea {
+.form-field{
+    margin: 0 auto;
     width: 320px;
 }
 .agreement {
@@ -970,27 +970,24 @@ textarea{
         padding-bottom: 40px;
         }
         .contacts-form_wrapper {
-        min-width: 90%;
+        min-width: 100%;
         padding-left: 0px;
+        }
+        .form-field{
+            margin: 0 auto;
+            width: 300px;
         }
         .btn-coral {
         margin: 0 auto;
         } 
-        .form-input, textarea {
-        min-width: 90%;
-        width: 90%;
-        }  
+ 
     }
 }
 @media screen and (max-width: 420px) {
     .contacts{ 
-        .contacts-form_wrapper {
-        min-width: 100%;
-        }
-        .form-input, textarea {
-        min-width: 100%;
-        width: 190px;
-        }  
+        .form-field{
+            width: 200px;
+        } 
     }
     .contacts .section-description, .contacts .section-title, .hero .container, .reviews .section-description, .reviews .section-title, .video .section-description, .video .section-title, .video-wrapper {
         white-space:normal;
@@ -1006,7 +1003,7 @@ textarea{
         font-size: 22px;
     }
     .agreement, .footer-copyright, .madeby-box a, .privacy-policy {
-    font-size: 10px;
+        font-size: 10px;
     }
     .contacts .section-description, .hero .section-description, .reviews .section-description, .video .section-description, .video-wrapper, .statistics-description p {
         font-size: 10px;
