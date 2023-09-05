@@ -141,10 +141,6 @@ input, button {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body, html {
-  width: 100vw;
-}
-
 body {
   color: #262a3f;
   background-color: #FFF;
@@ -196,6 +192,10 @@ body.fixed {
 .header {
   background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.24) 24.1%, rgba(255, 255, 255, 0) 47.19%), rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(4.5px);
+}
+
+.header .container {
+  position: relative;
 }
 
 .main_nav {
@@ -276,9 +276,9 @@ body.fixed {
 
 .theme_switcher {
   display: inline-block;
-  position: fixed;
+  position: absolute;
   top: 50%;
-  right: 20px;
+  right: -40px;
   transform: translateY(-50%);
   z-index: 10;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -295,9 +295,9 @@ body.fixed {
 
 .theme_switcher.is-active {
   display: block;
-  position: fixed;
+  position: absolute;
   top: 50%;
-  right: 20px;
+  right: -40px;
   transform: translateY(-50%);
   z-index: 10;
   transition: all 0.2s ease;
@@ -896,10 +896,10 @@ textarea:hover, textarea:focus {
   }
 
   .theme_switcher {
-    right: 10px;
+    right: -30px;
   }
   .theme_switcher.is-active {
-    right: 10px;
+    right: -30px;
   }
 
   .hero .container {
@@ -1062,15 +1062,12 @@ textarea:hover, textarea:focus {
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.2);
   }
-  .header.menu-open .theme_switcher {
-    top: 40px;
-  }
 
   .theme_switcher {
-    right: 10px;
+    right: -10px;
   }
   .theme_switcher.is-active {
-    right: 10px;
+    right: -10px;
   }
 
   .main_nav {
@@ -1195,8 +1192,30 @@ textarea:hover, textarea:focus {
     bottom: -25%;
   }
 
+  .statistics-count span {
+    font-size: 32px;
+  }
+
   .benefits_list, .promises_list, .quote .container, .reviews_item {
     text-align: center;
+  }
+
+  .quote .container {
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2px;
+  }
+  .quote .container .quote-description {
+    margin-bottom: 0px;
+  }
+
+  .quote-description::before {
+    width: 51px;
+    position: absolute;
+    top: -17px;
+    left: 13px;
   }
 
   .promises .container {
@@ -1218,22 +1237,41 @@ textarea:hover, textarea:focus {
   }
 
   .reviews_item {
+    justify-content: space-around;
     width: 90%;
-    min-height: 340px;
+    min-height: 240px;
     padding: 5% 4%;
+  }
+  .reviews_item .reviews-description {
+    font-size: 1rem;
   }
 
   .reviews .section-title, .reviews .section-description, .video-wrapper, .video .section-title, .video .section-description, .contacts .section-title, .contacts .section-description, .video .section-title, .video .section-description, .hero .container {
     text-align: center;
   }
 
-  .reviews-description {
-    font-size: 1rem;
+  .reviews .section-description {
+    max-width: 100%;
   }
 
   .video-youtube_link svg.item-icon {
     width: 40px;
     height: 40px;
+  }
+
+  .btn-large-coral {
+    padding: 32px 40px 32px 40px;
+  }
+  .btn-large-coral::after {
+    left: 25%;
+    bottom: 34%;
+  }
+
+  .promises-wrapper {
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .footer_wrapper {
@@ -1264,7 +1302,7 @@ textarea:hover, textarea:focus {
     margin: 0 auto;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 480px) {
   .contacts .form-field {
     width: 200px;
   }
@@ -1273,20 +1311,12 @@ textarea:hover, textarea:focus {
     white-space: normal;
   }
 
-  .btn-large-coral {
-    padding: 32px 40px 32px 40px;
-  }
-  .btn-large-coral::after {
-    left: 25%;
-    bottom: 34%;
-  }
-
   * .section-title, .contacts .section-title, .reviews .section-title, .video .section-title {
-    font-size: 22px;
+    font-size: 30px;
   }
 
   .agreement, .footer-copyright, .madeby-box a, .privacy-policy {
-    font-size: 10px;
+    font-size: 14px;
   }
 
   .contacts .section-description, .hero .section-description, .reviews .section-description, .video .section-description, .video-wrapper, .statistics-description p {
@@ -1297,8 +1327,8 @@ textarea:hover, textarea:focus {
     align-items: center;
   }
 
-  .promises .container {
-    max-width: 220px;
+  .reviews_item .reviews-description {
+    font-size: 0.8rem;
   }
 
   .benefits_item {
@@ -1340,12 +1370,6 @@ body.dark .hamburger.is-active .hamburger-inner::after {
 }
 body.dark .hamburger-inner, body.dark .hamburger-inner::before, body.dark .hamburger-inner::after {
   background-color: #FFF;
-}
-body.dark .theme_switcher {
-  right: 10px;
-}
-body.dark .theme_switcher.is-active {
-  right: 10px;
 }
 body.dark .theme_switcher {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1493,9 +1517,6 @@ body.dark .reviews_item:nth-of-type(3n) {
 }
 body.dark .reviews-description {
   color: #FFF;
-  font-size: 1rem;
-  line-height: calc(26/16);
-  opacity: 0.8;
 }
 body.dark .contacts .container {
   border-top: 1px solid #515773;
@@ -1524,11 +1545,6 @@ body.dark .madeby-box a, body.dark .agreement, body.dark .privacy-policy {
 body.dark .madeby-box a:focus, body.dark .madeby-box a:hover, body.dark .agreement:focus, body.dark .agreement:hover, body.dark .privacy-policy:focus, body.dark .privacy-policy:hover {
   color: #689FF2;
 }
-@media screen and (max-width: 1078px) {
-  body.dark .promises-wrapper {
-    background-color: #161926;
-  }
-}
 @media screen and (max-width: 767px) {
   body.dark .hamburger {
     color: #262a3f;
@@ -1538,9 +1554,6 @@ body.dark .madeby-box a:focus, body.dark .madeby-box a:hover, body.dark .agreeme
   }
   body.dark .header.menu-open::after {
     background-color: rgba(255, 255, 255, 0.2);
-  }
-  body.dark .header.menu-open .theme_switcher.is-active {
-    top: 40px;
   }
   body.dark .nav_list {
     background-color: #262a3f;
@@ -1553,11 +1566,5 @@ body.dark .madeby-box a:focus, body.dark .madeby-box a:hover, body.dark .agreeme
   }
   body.dark .nav_list .nav_link:hover::after {
     background-color: #689FF2;
-  }
-  body.dark .theme_switcher {
-    right: 40px;
-  }
-  body.dark .theme_switcher.is-active {
-    right: 40px;
   }
 }
