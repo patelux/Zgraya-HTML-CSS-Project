@@ -1044,10 +1044,6 @@ textarea:hover, textarea:focus {
   }
 }
 @media screen and (max-width: 767px) {
-  .mobile {
-    display: block;
-  }
-
   .header.menu-open {
     backdrop-filter: none;
   }
@@ -1081,21 +1077,20 @@ textarea:hover, textarea:focus {
     top: 0;
     margin: 0 auto;
     z-index: 6;
-    height: 70vh;
-    width: 90%;
+    height: 80vh;
+    width: 80%;
     background-color: #fff;
     flex-direction: column;
     justify-content: flex-start;
     gap: 0;
     transition: all 1s ease;
-    transform: translateX(100vw);
+    transform: translateY(-100vH);
     opacity: 0;
-    padding-top: 60px;
+    padding-top: 20px;
   }
   .nav_list .nav_link {
     font-size: 23px;
     font-weight: 700;
-    padding: 20px 0;
     text-align: center;
   }
   .nav_list .nav_link::after {
@@ -1554,6 +1549,13 @@ body.dark .madeby-box a:focus, body.dark .madeby-box a:hover, body.dark .agreeme
   }
   body.dark .header.menu-open::after {
     background-color: rgba(255, 255, 255, 0.2);
+  }
+  body.dark .btn-large-coral {
+    padding: 32px 40px 32px 40px;
+  }
+  body.dark .btn-large-coral::after {
+    left: 25%;
+    bottom: 34%;
   }
   body.dark .nav_list {
     background-color: #262a3f;
