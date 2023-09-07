@@ -207,10 +207,10 @@ body.fixed {
   align-items: center;
 }
 
-.logo_link {
+.logo-wrapper .logo_link {
   transition: transform 0.3s ease;
 }
-.logo_link:hover .logo, .logo_link:focus .logo {
+.logo-wrapper .logo_link:hover, .logo-wrapper .logo_link:focus {
   transform: scale(1.2);
 }
 
