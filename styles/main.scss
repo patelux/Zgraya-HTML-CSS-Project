@@ -53,7 +53,7 @@ body.fixed{
     align-items: center;
 }
 .logo_link {
-    transition: transform $transitionFunc;
+    transition: transform 0.3s ease;
 &:hover .logo, &:focus .logo{
     transform: scale(1.2);
 }
