@@ -470,7 +470,6 @@ body.fixed {
   font-weight: 400;
   line-height: calc(72/68);
   margin-bottom: 12px;
-  white-space: nowrap;
 }
 .statistics-count span {
   font-size: 50px;
@@ -483,7 +482,7 @@ body.fixed {
 }
 
 .statistics-description {
-  flex-basis: 52%;
+  flex-basis: 50%;
 }
 .statistics-description p {
   font-weight: 300;
@@ -1034,12 +1033,15 @@ textarea:hover, textarea:focus {
     margin-right: 12px;
   }
 }
-@media screen and (max-width: 990px) {
-  .reviews-description {
-    font-size: 0.8rem;
+@media screen and (max-width: 991px) {
+  .reviews_item {
+    padding: 2% 2%;
   }
-}
-@media screen and (max-width: 767px) {
+
+  .reviews-description {
+    font-size: 14px;
+  }
+
   .header.menu-open {
     backdrop-filter: none;
   }
@@ -1139,14 +1141,16 @@ textarea:hover, textarea:focus {
   .logo-wrapper {
     height: initial;
   }
-
+}
+@media screen and (max-width: 767px) {
   .section-title {
     font-size: 36px;
     line-height: calc(52/36);
   }
 
   .hero .section-description, .hero .section-title {
-    max-width: 100%;
+    max-width: 70%;
+    text-align: left;
   }
 
   .statistics .container, .promises .container {
@@ -1177,6 +1181,8 @@ textarea:hover, textarea:focus {
     width: 100%;
     text-align: center;
     padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   .statistics-item:not(:last-child)::after {
@@ -1230,14 +1236,15 @@ textarea:hover, textarea:focus {
   .reviews_item {
     justify-content: space-around;
     width: 90%;
-    min-height: 240px;
+    height: 100%;
     padding: 5% 4%;
   }
   .reviews_item .reviews-description {
-    font-size: 1rem;
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 
-  .reviews .section-title, .reviews .section-description, .video-wrapper, .video .section-title, .video .section-description, .contacts .section-title, .contacts .section-description, .video .section-title, .video .section-description, .hero .container {
+  .reviews .section-title, .reviews .section-description, .video-wrapper, .video .section-title, .video .section-description, .contacts .section-title, .contacts .section-description, .video .section-title, .video .section-description {
     text-align: center;
   }
 
@@ -1287,15 +1294,19 @@ textarea:hover, textarea:focus {
   }
   .contacts .form-field {
     margin: 0 auto;
-    width: 300px;
+    width: 90%;
   }
   .contacts .btn-coral {
     margin: 0 auto;
   }
 }
 @media screen and (max-width: 480px) {
+  .contacts .section-description, .hero .section-description, .reviews .section-description, .statistics-description p, .video .section-description, .video-wrapper {
+    font-size: 18px;
+  }
+
   .contacts .form-field {
-    width: 200px;
+    width: 90%;
   }
 
   .contacts .section-description, .contacts .section-title, .hero .container, .reviews .section-description, .reviews .section-title, .video .section-description, .video .section-title, .video-wrapper {
@@ -1310,16 +1321,12 @@ textarea:hover, textarea:focus {
     font-size: 14px;
   }
 
-  .contacts .section-description, .hero .section-description, .reviews .section-description, .video .section-description, .video-wrapper, .statistics-description p {
-    font-size: 10px;
+  .contacts .section-description, .hero .section-description, .reviews .section-description, .statistics-description p, .video .section-description, .video-wrapper {
+    font-size: 18px;
   }
 
   .reviews_list {
     align-items: center;
-  }
-
-  .reviews_item .reviews-description {
-    font-size: 0.8rem;
   }
 
   .benefits_item {
@@ -1327,7 +1334,7 @@ textarea:hover, textarea:focus {
   }
 
   .quote .container {
-    padding: 2px;
+    padding: 10px;
   }
 
   .quote-description {
@@ -1536,7 +1543,7 @@ body.dark .madeby-box a, body.dark .agreement, body.dark .privacy-policy {
 body.dark .madeby-box a:focus, body.dark .madeby-box a:hover, body.dark .agreement:focus, body.dark .agreement:hover, body.dark .privacy-policy:focus, body.dark .privacy-policy:hover {
   color: #689FF2;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   body.dark .hamburger {
     color: #262a3f;
   }
@@ -1545,13 +1552,6 @@ body.dark .madeby-box a:focus, body.dark .madeby-box a:hover, body.dark .agreeme
   }
   body.dark .header.menu-open::after {
     background-color: rgba(255, 255, 255, 0.2);
-  }
-  body.dark .btn-large-coral {
-    padding: 32px 40px 32px 40px;
-  }
-  body.dark .btn-large-coral::after {
-    left: 25%;
-    bottom: 34%;
   }
   body.dark .nav_list {
     background-color: #262a3f;
@@ -1564,5 +1564,15 @@ body.dark .madeby-box a:focus, body.dark .madeby-box a:hover, body.dark .agreeme
   }
   body.dark .nav_list .nav_link:hover::after {
     background-color: #689FF2;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btn-large-coral {
+    padding: 32px 40px 32px 40px;
+  }
+  .btn-large-coral::after {
+    left: 25%;
+    bottom: 34%;
   }
 }

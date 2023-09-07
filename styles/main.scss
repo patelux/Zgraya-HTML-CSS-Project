@@ -251,7 +251,6 @@ body.fixed{
     font-weight: 400;
     line-height: calc(72/68);
     margin-bottom: 12px;
-    white-space: nowrap;
     span {
         font-size: 50px;
         position: relative;
@@ -262,7 +261,7 @@ body.fixed{
     line-height: calc(26/18);
 }
 .statistics-description {
-    flex-basis: 52%;
+    flex-basis: 50%;
     p{
     font-weight: 300;
     line-height: calc(26/18);
@@ -770,16 +769,13 @@ textarea{
 }
 
 // MOBILE LARGE
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 991px) {
+    .reviews_item {
+        padding: 2% 2%;
+    }
     .reviews-description {
-        font-size: 0.8rem;
+        font-size: 14px;
     }   
-}
-
-// MOBILE STYLES------------------
-@media screen and (max-width: 767px) {
-// ------------------------------------------
-
 .header.menu-open{
     backdrop-filter: none;   
     &::after{
@@ -869,25 +865,27 @@ textarea{
     }
 }
 
-// -------------------------------------------
-    .header {
+ .header {
         padding: 12px 0;
     }
     .logo-wrapper {
     height: initial;
     }
-    .section-title {
+}
+
+// MOBILE STYLES------------------
+@media screen and (max-width: 767px) {
+  .section-title {
         font-size: 36px;
         line-height: calc(52/36);
     }
     .hero .section-description, .hero .section-title {
-        max-width: 100%;
+        max-width: 70%;
+        text-align: left;
     }
-
     .statistics .container, .promises .container {
         background-size: cover;
     }
-
     .statistics-count {
         font-size: 46px;
         line-height: calc(72/100);
@@ -909,6 +907,8 @@ textarea{
         width: 100%;
         text-align: center;
         padding-top: 15px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
     .statistics-item:not(:last-child)::after {
         bottom: -25%;
@@ -918,8 +918,7 @@ textarea{
     }
     .benefits_list, .promises_list, .quote .container, .reviews_item {
         text-align: center;
-    }
-    
+    }    
     .quote .container {
         padding: 2px;
         display: flex;
@@ -954,13 +953,14 @@ textarea{
     .reviews_item {
         justify-content: space-around;
         width: 90%;
-        min-height: 240px;
+        height: 100%;
         padding: 5% 4%;
         .reviews-description {
-            font-size: 1rem;
+            font-size: 16px;
+            margin-bottom: 10px;
         }
     }
-    .reviews .section-title, .reviews .section-description, .video-wrapper, .video .section-title, .video .section-description, .contacts .section-title, .contacts .section-description, .video .section-title, .video .section-description, .hero .container {
+    .reviews .section-title, .reviews .section-description, .video-wrapper, .video .section-title, .video .section-description, .contacts .section-title, .contacts .section-description, .video .section-title, .video .section-description {
         text-align: center;
     }
     .reviews .section-description {
@@ -1004,7 +1004,7 @@ textarea{
         }
         .form-field{
             margin: 0 auto;
-            width: 300px;
+            width: 90%;
         }
         .btn-coral {
         margin: 0 auto;
@@ -1013,9 +1013,12 @@ textarea{
     }
 }
 @media screen and (max-width: 480px) {
+        .contacts .section-description, .hero .section-description, .reviews .section-description, .statistics-description p, .video .section-description, .video-wrapper {
+    font-size: 18px;
+    }
     .contacts{ 
         .form-field{
-            width: 200px;
+            width: 90%;
         } 
     }
     .contacts .section-description, .contacts .section-title, .hero .container, .reviews .section-description, .reviews .section-title, .video .section-description, .video .section-title, .video-wrapper {
@@ -1028,20 +1031,18 @@ textarea{
     .agreement, .footer-copyright, .madeby-box a, .privacy-policy {
         font-size: 14px;
     }
-    .contacts .section-description, .hero .section-description, .reviews .section-description, .video .section-description, .video-wrapper, .statistics-description p {
-        font-size: 10px;
+    .contacts .section-description, .hero .section-description, .reviews .section-description, .statistics-description p, .video .section-description, .video-wrapper {
+        font-size: 18px;
     }
     .reviews_list {
         align-items: center;
     }
-    .reviews_item .reviews-description {
-        font-size: 0.8rem;
-    }
+
     .benefits_item {
         padding: 0;
     }
     .quote .container{
-        padding: 2px;
+        padding: 10px;
        
     }
     .quote-description {
@@ -1116,7 +1117,6 @@ body.dark {
         }
         .theme-light span{
             color: $primaryTextColorDark;
-
         }
     }
     // --
@@ -1124,15 +1124,12 @@ body.dark {
         color: $accentColor_greenDark;
         .theme-dark span{
             color: $accentColor_greenDark;
-
         }
         .theme-light span{
             color: $accentColor_greenDark;
         }
     }
-
     // MAIN CONTENT------------------
-    
     .section-title {
         color: $primaryTextColorDark;
         span{
@@ -1151,7 +1148,6 @@ body.dark {
     .btn-coral {
         @include btn($accentColor_coralDark, $accentHover_redDark);
     }
-    // SECTION statistics--------------------
     .statistics .container {
         background-image: url(../assets/images/statistic-img_desktop-1x.jpg);
     }
@@ -1176,8 +1172,7 @@ body.dark {
     .video-wrapper {
         border: 1px solid $borderColorDark;
     }
-    
-    .video-youtube_link{
+       .video-youtube_link{
         transition: all $transitionFunc;
         svg use{
             --color1: #689FF2;
@@ -1187,21 +1182,15 @@ body.dark {
             --color1: #85BBB1;
             --color2: #85BBB1;
         }
-    
     }
-    
-    // section promises
     .promises-wrapper{
         background-color: $primaryBgColorDark;
     }
     .section-subtitle {
         color: $primaryTextColorDark;
-    }
-    
-    
+    }   
     .reviews_item {
-    
-        &:nth-of-type(1n){
+           &:nth-of-type(1n){
             background-image:linear-gradient(90deg, rgba(25, 28, 41, 0.60) 100%, rgba(25, 28, 41, 0.60) 100%),
             url(../assets/images/client-1-image_desktop-1x.jpg);
         }
@@ -1251,9 +1240,8 @@ body.dark {
         color: $primaryTextColorDark;
     
     }
-    
-// MOBILE STYLES------------------
-    @media screen and (max-width: 767px) {
+    // tablet styles
+    @media screen and (max-width: 991px) {
         .hamburger{
             color: $primaryTextColor;
         }
@@ -1261,17 +1249,10 @@ body.dark {
     .header.menu-open{ 
         backdrop-filter: none;
         &::after{
-            background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.2);
+            }
         }
-    }
-
-    .btn-large-coral {
-        padding: 32px 40px 32px 40px;
-        &::after {
-            left: 25%;
-            bottom: 34%;
-    }}
-    .nav_list {
+        .nav_list {
         background-color: $primaryTextColor;
         & .nav_link{
     
@@ -1287,7 +1268,14 @@ body.dark {
             background-color: $accentColor_greenDark;
         }
     }
-
-}
+}}
+// MOBILE STYLES------------------
+    @media screen and (max-width: 767px) {
+    .btn-large-coral {
+        padding: 32px 40px 32px 40px;
+        &::after {
+            left: 25%;
+            bottom: 34%;
+    }}
 }
     
